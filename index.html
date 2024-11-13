@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castlevania NES Emulator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Play Castlevania on NES Emulator</h1>
+        <p>Enjoy the classic Castlevania game right in your browser!</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <div id="game"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Made with ❤️ by You</p>
+    </footer>
+
+    <script type="text/javascript">
+        // Setup variables for EmulatorJS
+        EJS_player = "#game"; 
+        EJS_core = "nes"; // Use NES emulator
+        EJS_gameUrl = "https://your-site-name.netlify.app/assets/Castlevania%20(USA)%20(Rev%201).nes";  // Replace with your ROM URL
+        EJS_pathtodata = "https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/";
+
+        // Initialize EmulatorJS when page loads
+        window.onload = function() {
+            if (typeof EmulatorJS !== 'undefined') {
+                EmulatorJS.load();
+            } else {
+                console.error("EmulatorJS failed to load.");
+            }
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/ethanaobrien/emulatorjs@main/data/loader.js"></script>
+</body>
+</html>
